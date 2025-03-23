@@ -1,4 +1,206 @@
 $(function () {
+
+// Variables globales pour les configurations UI
+let uiColors = {
+  primary: "#398d75",
+  secondary: "#2874a6", 
+  danger: "#c03036",
+  background: "rgba(2, 2, 2, .7)",
+  backgroundSecondary: "rgba(2, 2, 2, .4)",
+  text: "#ffffff",
+  textSecondary: "#e7e7e7cb",
+  border: "#fdfdfe",
+  highlight: "#2874a680",
+  success: "#388c5a"
+};
+
+// Variables pour les icônes
+let uiIcons = {
+  type: "fontawesome",
+  performance: "fa-gauge-high",
+  interior: "fa-car-side",
+  exterior: "fa-car",
+  color: "fa-palette",
+  wheels: "fa-dharmachakra",
+  extras: "fa-plus",
+  doors: "fa-door-open",
+  confirm: "fa-check",
+  cancel: "fa-times"
+};
+
+// Variables pour les animations
+let uiAnimations = {
+  enable: true,
+  duration: 200
+};
+
+// Variable pour le logo
+let uiLogo = {
+  enabled: true,
+  url: "nui://custom/png/fshop.png",
+  width: 53,
+  height: 53
+};
+
+
+applyUIColors();
+
+// Ajouter ces styles dynamiques pour l'interface
+const dynamicCSS = `
+    :root {
+        --color-primary: ${uiColors.primary};
+        --color-secondary: ${uiColors.secondary};
+        --color-danger: ${uiColors.danger};
+        --color-background: ${uiColors.background};
+        --color-background-secondary: ${uiColors.backgroundSecondary};
+        --color-text: ${uiColors.text};
+        --color-text-secondary: ${uiColors.textSecondary};
+        --color-border: ${uiColors.border};
+        --color-highlight: ${uiColors.highlight};
+        --color-success: ${uiColors.success};
+        --animation-duration: ${uiAnimations.duration}ms;
+    }
+    
+    /* Style pour les icônes d'image */
+    .nav-icon-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 4px;
+    }
+    
+    .nav-icon {
+        width: 24px;
+        height: 24px;
+        object-fit: contain;
+    }
+    
+    /* Appliquer les couleurs dynamiques aux éléments existants */
+    .custom .anul-btn {
+        background-color: var(--color-danger);
+    }
+    
+    .custom .anul-btn:hover {
+        background-color: var(--color-danger);
+        filter: brightness(1.2);
+    }
+    
+    .custom .valid-btn {
+        background-color: var(--color-primary);
+    }
+    
+    .custom .valid-btn:hover {
+        background-color: var(--color-primary);
+        filter: brightness(1.2);
+    }
+    
+    .custom .text-wrapper-17 {
+        color: var(--color-success);
+    }
+    
+    .custom .modif {
+        background: linear-gradient(.25turn, var(--color-background), var(--color-background-secondary));
+    }
+    
+    .custom .liste {
+        background: var(--color-background);
+    }
+    
+    /* Styles pour les transitions */
+    .custom .mod-item .selection .rond,
+    .custom .turbo-btn,
+    .custom .extra-toggle-btn,
+    .perf-btn, .int-btn, .ext-btn, .color-btn, .roues-btn, .extra-btn, .portes,
+    .xenon-color, .neon-color, .color-item, .wheel-color, .smoke-color,
+    .tint-option, .paint-type-item {
+        transition: all var(--animation-duration) ease !important;
+    }
+    
+    /* Style pour les états sélectionnés */
+    .active, .selected {
+        background-color: var(--color-highlight) !important;
+        border-color: var(--color-secondary) !important;
+    }
+`;
+
+$('head').append(`<style id="dynamic-ui-styles">${dynamicCSS}</style>`);
+
+// Fonction pour remplacer une icône FontAwesome par une image
+function replaceIconWithImage(selector, imageUrl) {
+  const element = $(selector);
+  const iconContainer = element.find('i');
+  
+  if (iconContainer.length > 0) {
+      // Remplacer l'icône par une image
+      iconContainer.replaceWith(`<img src="${imageUrl}" class="nav-icon" alt="icon">`);
+  } else if (element.find('img.nav-icon').length === 0) {
+      // Si aucune icône n'existe et qu'il n'y a pas déjà une image, ajouter l'image
+      element.prepend(`<img src="${imageUrl}" class="nav-icon" alt="icon">`);
+  } else {
+      // Mettre à jour l'image existante
+      element.find('img.nav-icon').attr('src', imageUrl);
+  }
+}
+
+
+// Fonction pour appliquer les couleurs dynamiques à l'interface
+function applyUIColors() {
+  // Application des couleurs principales
+  document.documentElement.style.setProperty('--color-primary', uiColors.primary);
+  document.documentElement.style.setProperty('--color-secondary', uiColors.secondary);
+  document.documentElement.style.setProperty('--color-danger', uiColors.danger);
+  document.documentElement.style.setProperty('--color-background', uiColors.background);
+  document.documentElement.style.setProperty('--color-background-secondary', uiColors.backgroundSecondary);
+  document.documentElement.style.setProperty('--color-text', uiColors.text);
+  document.documentElement.style.setProperty('--color-text-secondary', uiColors.textSecondary);
+  document.documentElement.style.setProperty('--color-border', uiColors.border);
+  document.documentElement.style.setProperty('--color-highlight', uiColors.highlight);
+  document.documentElement.style.setProperty('--color-success', uiColors.success);
+  
+  // Application des icônes - gérer à la fois les icônes FontAwesome et les images
+  if (uiIcons.type === "fontawesome") {
+      $('.perf-btn i').attr('class', 'fas ' + uiIcons.performance);
+      $('.int-btn i').attr('class', 'fas ' + uiIcons.interior);
+      $('.ext-btn i').attr('class', 'fas ' + uiIcons.exterior);
+      $('.color-btn i').attr('class', 'fas ' + uiIcons.color);
+      $('.roues-btn i').attr('class', 'fas ' + uiIcons.wheels);
+      $('.extra-btn i').attr('class', 'fas ' + uiIcons.extras);
+      $('.portes-btn i').attr('class', 'fas ' + uiIcons.doors);
+      
+      // S'assurer que les éléments montrent des icônes et non des images
+      $('.nav-icon-container').each(function() {
+          $(this).html(`<i class="fas"></i>`);
+      });
+  } else if (uiIcons.type === "image") {
+      // Remplacer les icônes FontAwesome par des images
+      replaceIconWithImage('.perf-btn', uiIcons.performance);
+      replaceIconWithImage('.int-btn', uiIcons.interior);
+      replaceIconWithImage('.ext-btn', uiIcons.exterior);
+      replaceIconWithImage('.color-btn', uiIcons.color);
+      replaceIconWithImage('.roues-btn', uiIcons.wheels);
+      replaceIconWithImage('.extra-btn', uiIcons.extras);
+      replaceIconWithImage('.portes-btn', uiIcons.doors);
+  }
+  
+  // Configuration du logo
+  if (uiLogo.enabled) {
+      $('.logo img').attr('src', uiLogo.url);
+      $('.logo img').css({
+          'width': uiLogo.width + 'px',
+          'height': uiLogo.height + 'px'
+      });
+  }
+  
+  // Application des durées d'animation
+  if (!uiAnimations.enable) {
+      // Désactiver toutes les animations
+      $('*').css('transition', 'none');
+  } else {
+      // Configurer la durée des animations
+      document.documentElement.style.setProperty('--animation-duration', uiAnimations.duration + 'ms');
+  }
+}
+
   window.vehicleColors = {
     // Couleurs standards/classiques (type 0)
     standard: [
@@ -2886,42 +3088,59 @@ $(document).ready(function() {
 });
 
   // Fonction pour afficher une notification
-  function showNotification(message) {
-    // Supprimer les anciennes notifications
-    $(".notification").remove();
+// Fonction pour afficher une notification
+function showNotification(message, type = "info") {
+  // Supprimer les anciennes notifications
+  $(".notification").remove();
 
-    // Créer la nouvelle notification
-    const notification = $(`<div class="notification">${message}</div>`);
-    $("body").append(notification);
+  // Déterminer la couleur en fonction du type
+  let bgColor;
+  switch (type) {
+      case "success":
+          bgColor = uiColors.success;
+          break;
+      case "error":
+          bgColor = uiColors.danger;
+          break;
+      case "warning":
+          bgColor = "#ffc107";
+          break;
+      default: // info
+          bgColor = uiColors.secondary;
+  }
 
-    // Animation d'entrée
-    notification
+  // Créer la nouvelle notification
+  const notification = $(`<div class="notification" style="background-color: ${bgColor};">${message}</div>`);
+  $("body").append(notification);
+
+  // Animation d'entrée
+  notification
       .css({
-        bottom: "-50px",
-        opacity: 0,
-      })
-      .animate(
-        {
-          bottom: "20px",
-          opacity: 1,
-        },
-        300
-      );
-
-    // Animation de sortie après 2 secondes
-    setTimeout(() => {
-      notification.animate(
-        {
           bottom: "-50px",
           opacity: 0,
-        },
-        300,
-        function () {
-          $(this).remove();
-        }
+      })
+      .animate(
+          {
+              bottom: "20px",
+              opacity: 1,
+          },
+          uiAnimations.enable ? uiAnimations.duration : 0
       );
-    }, 2000);
-  }
+
+  // Animation de sortie après 2 secondes
+  setTimeout(() => {
+      notification.animate(
+          {
+              bottom: "-50px",
+              opacity: 0,
+          },
+          uiAnimations.enable ? uiAnimations.duration : 0,
+          function () {
+              $(this).remove();
+          }
+      );
+  }, 2000);
+}
 
   // Fonction pour appliquer une modification au véhicule
   function applyModification(category, level, extraData) {
@@ -5209,6 +5428,27 @@ local tyreSmokes = {
     const data = event.data;
 
     if (data.action === "open") {
+
+      if (data.colors) {
+        uiColors = data.colors;
+    }
+    
+    if (data.icons) {
+        uiIcons = data.icons;
+    }
+    
+    if (data.animations) {
+        uiAnimations = data.animations;
+    }
+    
+    if (data.logo) {
+        uiLogo = data.logo;
+    }
+    
+    // Appliquer les couleurs et icônes
+    applyUIColors();
+
+
       // Réinitialiser les données avec celles reçues
       if (data.performanceCategories) {
         performanceCategories = data.performanceCategories;
