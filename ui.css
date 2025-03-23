@@ -1,0 +1,1574 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+    user-select: none;  
+}
+
+button:focus-visible {
+    outline: 2px solid #2874a6;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.custom {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.custom .div {
+    background-color: transparent;
+    width: 1920px;
+    height: 1080px;
+    position: relative;
+}
+
+.custom .modif {
+    position: absolute;
+    width: 431px;
+    height: 826px;
+    top: 171px;
+    left: 157px;
+    border-radius: 1px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: linear-gradient(.25turn, rgba(2, 2, 2, .7), rgba(0, 0, 0, 0.4));
+    padding-bottom: 50px; /* Espace supplémentaire en bas */
+}
+
+/* Style amélioré pour la scrollbar */
+.custom .modif::-webkit-scrollbar {
+    width: 5px;
+    height: 2px;
+
+}
+
+.custom .modif::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.4);
+    border-radius: 5px
+}
+
+.custom .modif::-webkit-scrollbar-thumb {
+    background: #e7e7e7cb;
+    border-radius: 5px
+}
+
+/* .custom .modif::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+} */
+
+
+
+.custom .turbo {
+    position: relative;
+    width: 95px;
+    height: 61px;
+    margin-top: 30px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.custom .turbo-btn {
+    position: absolute;
+    width: 19px;
+    height: 21px;
+    top: 40px;
+    left: 1px;
+    background-color: #12121281;
+    border: 1px solid;
+    border-color: #fdfdfe;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.custom .turbo-btn:hover {
+    background-color: rgba(57, 141, 117, 0.5);
+}
+
+.custom .text-wrapper {
+    position: absolute;
+    width: 95px;
+    top: -1px;
+    left: 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+/* Styles uniformes pour tous les éléments de sélection */
+.custom .mod-item {
+    position: relative;
+    width: 361px;
+    height: 110px;
+    margin: 20px 0 20px 20px;
+    clear: both;
+}
+
+.custom .mod-item-level {
+    position: absolute;
+    width: 70px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 12px;
+    top: 41px;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.custom .mod-item-title {
+    position: absolute;
+    width: 220px;
+    top: -1px;
+    left: 0;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.custom .mod-item .selection {
+    position: absolute;
+    width: 359px;
+    height: 40px;
+    top: 70px;
+    left: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    background: rgba(2, 2, 2, .4);
+}
+
+.custom .mod-item .selection .ligne {
+    position: absolute;
+    width: 260px;
+    height: 2px;
+    top: 19px;
+    left: 54px;
+    background-color: #6f6f6f2a;
+}
+
+
+.custom .liste {
+    position: absolute;
+    width: 100px;
+    height: 826px;
+    top: 171px;
+    left: 48px;
+    background: rgba(2, 2, 2, .6);
+    border-radius: 1px;
+    overflow: hidden;
+}
+
+.custom .anul-btn {
+    position: absolute;
+    width: 81px;
+    height: 50px;
+    top: 706px;
+    left: 9px;
+    background-color: #c03036;
+    border-radius: 1px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 5px;
+}
+
+.custom .anul-btn:hover {
+    background-color: #d84045;
+}
+
+.custom .anul-btn img {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    object-fit: contain;
+}
+
+.custom .text-wrapper-15 {
+    position: relative;
+    width: auto;
+    top: unset;
+    left: unset;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 10px;
+    text-align: center;
+}
+
+.custom .valid-btn {
+    position: absolute;
+    width: 81px;
+    height: 50px;
+    top: 766px;
+    left: 9px;
+    background-color: #398d75;
+    border-radius: 1px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 5px;
+}
+
+.custom .valid-btn:hover {
+    background-color: #4aa78d;
+}
+
+.custom .valid-btn img {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    object-fit: contain;
+}
+
+.custom .text-wrapper-16 {
+    position: relative;
+    width: auto;
+    top: unset;
+    left: unset;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 10px;
+    text-align: center;
+}
+
+.custom .prix {
+    position: absolute;
+    width: 81px;
+    height: 31px;
+    top: 667px;
+    left: 9px;
+    background-color: rgba(2, 2, 2, .4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom .text-wrapper-17 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: #388c5a;
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.custom .portes {
+    position: absolute;
+    width: 81px;
+    height: 65px;
+    top: 598px;
+    left: 9px;
+    background-color: rgba(2, 2, 2, .4);
+    border-radius: 1px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 8px;
+}
+
+.text-wrapper-p {
+    font-family: "Poppins", sans-serif;
+    color: #ffffff;
+    font-size: 10px;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.custom .portes i {
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.extra-btn,
+.roues-btn,
+.color-btn,
+.ext-btn,
+.int-btn,
+.perf-btn {
+    position: absolute;
+    width: 81px;
+    height: 70px;
+    background-color: rgba(2, 2, 2, .4);
+    border-radius: 1px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15px;
+}
+
+.extra-btn i,
+.roues-btn i,
+.color-btn i,
+.ext-btn i,
+.int-btn i,
+.perf-btn i,
+.portes i {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.extra-btn:hover,
+.roues-btn:hover,
+.color-btn:hover,
+.ext-btn:hover,
+.int-btn:hover,
+.portes:hover,
+.perf-btn:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.perf-btn {
+    top: 10px;
+    left: 9px;
+    border: 1px solid transparent;
+}
+
+.int-btn {
+    top: 90px;
+    left: 9px;
+}
+
+.ext-btn {
+    top: 170px;
+    left: 9px;
+}
+
+.color-btn {
+    top: 250px;
+    left: 9px;
+}
+
+.roues-btn {
+    top: 330px;
+    left: 9px;
+}
+
+.extra-btn {
+    top: 410px;
+    left: 9px;
+}
+
+.text-wrapper-18,
+.text-wrapper-19,
+.text-wrapper-20,
+.text-wrapper-21,
+.text-wrapper-22,
+.text-wrapper-23 {
+    font-family: "Poppins", sans-serif;
+    color: #ffffff;
+    font-size: 10px;
+    text-align: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.custom .logo {
+    position: absolute;
+    width: 100px;
+    height: 78px;
+    top: 83px;
+    left: 48px;
+    background: rgba(2, 2, 2, .6);
+    border-radius: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom .img {
+    width: 53px;
+    height: 53px;
+    object-fit: cover;
+}
+
+/* Animation styles */
+.selection .rond:hover {
+    transform: scale(1.2);
+}
+
+
+
+/* Styles pour les boutons de rotation */
+.rotation-controls {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    z-index: 1000;
+}
+
+.rotation-btn {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.rotation-btn:hover {
+    background-color: #2874a680;
+    border: 1px solid #2874a6;
+}
+
+.rotation-btn i {
+    font-size: 20px;
+}
+
+/* Style pour les éléments générés dynamiquement */
+.mod-item2 {
+    position: relative;
+    width: 361px;
+    height: 90px;
+    margin: -10px 10px 10px 20px;
+}
+
+.mod-item-title2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 14px;
+    margin: 10px 0 10px 20px;
+}
+
+.mod-item-title23 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 14px;
+    margin: 20px 0 10px 20px;
+}
+
+.mod-item-title3 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 14px;
+    margin-bottom: 3px;
+    margin-left: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.extra-toggle {
+    display: flex;
+    align-items: center;
+    margin: 15px 20px;
+}
+
+.extra-toggle-btn {
+    width: 19px;
+    height: 21px;
+    background-color: #121212;
+    border: 1px solid #fdfdfe;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.extra-toggle-btn.active {
+    background-color: #398d75;
+}
+
+.extra-toggle-label {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+/* Amélioration pour les grilles de couleurs */
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    margin: 10px 20px;
+    max-width: 350px;
+}
+
+.color-item {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.color-item:hover {
+    transform: scale(1.1);
+}
+
+.color-item.active {
+    border-color: #ffffff;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+/* Amélioration du style des sections de couleurs */
+.color-section {
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 15px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 15px;
+}
+
+/* Style pour le menu actif */
+.perf-btn.active, 
+.int-btn.active, 
+.ext-btn.active, 
+.color-btn.active, 
+.roues-btn.active, 
+.extra-btn.active, 
+.portes.active {
+    background-color: #2874a680;
+    border: 1px solid #2874a6;
+}
+
+/* Styles pour la flèche droite */
+.custom .mod-item .selection .fleches {
+    position: absolute;
+    width: 6px;
+    height: 11px;
+    top: 15px;
+    left: 333px;
+    transform: rotate(-180deg);
+    cursor: pointer;
+    z-index: 3;
+}
+
+.custom .mod-item .selection .fleches .fleche {
+    position: absolute;
+    width: 6px;
+    height: 1px;
+    top: 8px;
+    left: 1px;
+    background-color: #ffffff;
+    transform: rotate(45deg);
+}
+
+.custom .mod-item .selection .fleches .fleche-2 {
+    position: absolute;
+    width: 8px;
+    height: 1px;
+    top: 3px;
+    left: -1px;
+    background-color: #ffffff;
+    transform: rotate(-45deg);
+}
+
+.custom .mod-item .selection .fleches-2 .fleche {
+    position: absolute;
+    width: 6px;
+    height: 1px;
+    top: 8px;
+    left: 1px;
+    background-color: #ffffff;
+    transform: rotate(45deg);
+}
+
+.custom .mod-item .selection .fleches-2 .fleche-2 {
+    position: absolute;
+    width: 8px;
+    height: 1px;
+    top: 3px;
+    left: -1px;
+    background-color: #ffffff;
+    transform: rotate(-45deg);
+}
+
+.custom .mod-item .selection .fleches-2 {
+    position: absolute;
+    width: 6px;
+    height: 11px;
+    top: 15px;
+    left: 19px;
+    cursor: pointer;
+    z-index: 3;
+}
+
+/* Effet de survol pour les deux flèches */
+.fleches:hover .fleche,
+.fleches:hover .fleche-2,
+.fleches-2:hover .fleche,
+.fleches-2:hover .fleche-2 {
+    background-color: #2874a6;
+}
+
+/* Style du rond du slider avec z-index supérieur */
+.custom .mod-item .selection .rond {
+    position: absolute;
+    cursor: pointer;
+    width: 9px;
+    height: 10px;
+    top: 15px;
+    left: 45px;
+    background-color: #fefeff;
+    border-radius: 5px;
+
+    transition: left 0.2s ease, transform 0.2s ease;
+    z-index: 4;
+}
+
+/* Animation spéciale pour le rond en état de dragging */
+.custom .mod-item .selection .rond.dragging {
+    background-color: #2874a6;
+    transform: scale(1.3);
+}
+
+/* Styles pour la nouvelle interface de couleurs */
+
+/* Barre d'icônes supérieure */
+.top-icons-bar {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(20, 20, 20, 0.0);
+    margin-bottom: 15px;
+    border-radius: 4px;
+  }
+
+  /* .top-icons-bar .icon-btn {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 0 1px;
+    transition: all 0.2s ease;
+  } */
+  
+  .icon-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 0;
+    flex: 1;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    color: #ffffff;
+  }
+  
+  .icon-btn:hover {
+    background-color: rgba(40, 116, 166, 0.5);
+  }
+  
+  .icon-btn.active {
+    background-color: rgba(40, 116, 166, 0.8);
+  }
+  
+  .icon-btn i {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .icon-btn span {
+    font-size: 12px;
+  }
+  
+  /* Section de couleur */
+  .color-section {
+    background-color: rgba(20, 20, 20, 0);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .color-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+  }
+  
+  .color-title {
+    font-weight: 600;
+    font-size: 15px;
+    color: #ffffff;
+  }
+  
+  .color-expand-btn {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #ffffff;
+  }
+  
+  /* Onglets de couleur */
+  .color-tabs {
+    display: flex;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .color-tab {
+    flex: 1;
+    text-align: center;
+    padding: 12px 0;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 14px;
+  }
+  
+  .color-tab:hover {
+    background-color: rgba(40, 116, 166, 0.5);
+  }
+  
+  .color-tab.active {
+    background-color: rgba(40, 116, 166, 0.8);
+  }
+  
+  /* Contenu de couleur */
+  .color-content {
+    padding: 15px;
+  }
+  
+  /* Grille de couleurs */
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .color-item {
+    width: 100%;
+    padding-bottom: 100%; /* Crée un carré parfait */
+    position: relative;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  
+  .color-item:hover {
+    transform: scale(1.1);
+  }
+  
+  .color-item.active {
+    border-color: #ffffff;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+  }
+  
+  /* Sélecteur de couleur personnalisé */
+  .color-picker-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .color-picker-gradient {
+    width: 100%;
+    height: 220px;
+    margin-bottom: 15px;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .gradient-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  
+  .color-canvas {
+    width: 100%;
+    height: 100%;
+    cursor: crosshair;
+  }
+  
+  .gradient-slider {
+    position: relative;
+    width: 100%;
+    padding: 10px 0 0 0;
+  }
+  
+  .gradient-slider input[type="range"] {
+    width: 100%;
+    height: 6px;
+    -webkit-appearance: none;
+    background: linear-gradient(to right, 
+      #FF0000, #FFFF00, #00FF00, #00FFFF, #0000FF, #FF00FF, #FF0000);
+    border-radius: 3px;
+    outline: none;
+  }
+  
+  .gradient-slider input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Contrôles du sélecteur de couleur */
+  .color-picker-controls {
+    display: flex;
+    margin-bottom: 15px;
+  }
+  
+  .rgb-sliders {
+    flex: 2;
+    margin-right: 15px;
+    margin-top: 24px;
+  }
+  
+  .rgb-slider {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .rgb-slider span {
+    color: #ffffff;
+    width: 20px;
+    text-align: center;
+    margin-right: 8px;
+  }
+  
+  .rgb-slider input[type="range"] {
+    flex: 1;
+    height: 6px;
+    -webkit-appearance: none;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    margin-right: 8px;
+  }
+  
+  .rgb-slider:nth-child(1) input[type="range"] {
+    background: linear-gradient(to right, #000000, #FF0000);
+  }
+  
+  .rgb-slider:nth-child(2) input[type="range"] {
+    background: linear-gradient(to right, #000000, #00FF00);
+  }
+  
+  .rgb-slider:nth-child(3) input[type="range"] {
+    background: linear-gradient(to right, #000000, #0000FF);
+  }
+  
+  .rgb-slider input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+  }
+  
+  .color-picker-values {
+    flex: 1;
+    margin-top: 16px;
+  }
+  
+  .color-input {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .color-input span {
+    color: #ffffff;
+    width: 30px;
+    text-align: left;
+    margin-right: 8px;
+  }
+  
+  .color-input input {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 3px;
+    padding: 6px;
+    color: #ffffff;
+    text-align: center;
+  }
+  
+  .color-input input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  
+  .color-input input[type="number"]::-webkit-inner-spin-button, 
+  .color-input input[type="number"]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  /* Bouton d'application */
+  .apply-color-btn {
+    width: 100%;
+    background-color: #2874a6;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .apply-color-btn:hover {
+    background-color: #3498db;
+  }
+  
+  /* Notification */
+  .notification {
+    position: fixed;
+    bottom: -50px;
+    right: 20px;
+    background-color: rgba(40, 116, 166, 0.9);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    opacity: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+  }
+
+
+  /* Styles supplémentaires pour l'interface de couleurs */
+
+/* Animations et transitions */
+.color-section, .color-tab, .color-item, .icon-btn, .tint-option, .extra-toggle-btn, .paint-type-item {
+  transition: all 0.2s ease-out;
+}
+
+/* Animation pour le hover des couleurs */
+.color-item:hover {
+  transform: scale(1.1);
+  z-index: 10;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+/* Style spécifique pour les couleurs de néon */
+.neon-colors-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.neon-color {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.neon-color span {
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+  font-size: 12px;
+  color: #e7e7e7cb;
+}
+
+
+/* Animations pour les notifications */
+@keyframes notification-in {
+  0% { bottom: -50px; opacity: 0; }
+  100% { bottom: 20px; opacity: 1; }
+}
+
+@keyframes notification-out {
+  0% { bottom: 20px; opacity: 1; }
+  100% { bottom: -50px; opacity: 0; }
+}
+
+.notification {
+  animation: notification-in 0.3s forwards;
+}
+
+.notification.hiding {
+  animation: notification-out 0.3s forwards;
+}
+
+/* Améliorations pour le sélecteur de couleur */
+.color-canvas {
+  cursor: crosshair;
+  border-radius: 4px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Style pour sélectionner la palette active */
+.color-section-header.active {
+  border-left: 3px solid #2874a6;
+  padding-left: 12px;
+}
+
+/* Style pour le curseur de teinte */
+.gradient-slider input[type="range"]::-webkit-slider-thumb {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Style pour les transitions de couleur */
+.color-item, .tint-option, .paint-type-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.color-item::after, .tint-option::after, .paint-type-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.color-item:hover::after, .tint-option:hover::after, .paint-type-item:hover::after {
+  opacity: 1;
+}
+
+/* Style pour les boutons d'application */
+.apply-color-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.apply-color-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.3s ease;
+}
+
+.apply-color-btn:hover::after {
+  left: 100%;
+}
+
+/* Améliorations visuelles supplémentaires */
+.top-icons-bar {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+}
+
+.color-section {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0);
+}
+
+/* Styles pour les états actifs */
+.color-tab.active, .icon-btn.active {
+  position: relative;
+}
+
+.color-tab.active::after, .icon-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 50%;
+  height: 2px;
+  background-color: #fff;
+}
+
+
+/* Style pour les types de peinture */
+.paint-type-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.paint-type-item {
+  background-color: rgba(40, 40, 40, 0.7);
+  border-radius: 4px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.paint-type-item:hover {
+  background-color: rgba(60, 60, 60, 0.8);
+  transform: translateY(-2px);
+}
+
+.paint-type-item.active {
+  border-color: #2874a6;
+  box-shadow: 0 0 8px rgba(40, 116, 166, 0.6);
+}
+
+.paint-type-name {
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.paint-type-price {
+  color: #5cb85c;
+  font-size: 12px;
+}
+
+/* Styles pour les teintes de vitres */
+.tint-options-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.tint-option {
+  background-color: rgba(30, 30, 30, 0.7);
+  border-radius: 4px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.tint-option:hover {
+  background-color: rgba(50, 50, 50, 0.8);
+  transform: translateY(-2px);
+}
+
+.tint-option.active, .tint-option.selected {
+  border-color: #2874a6;
+  box-shadow: 0 0 8px rgba(40, 116, 166, 0.6);
+}
+
+.tint-preview {
+  width: 100%;
+  height: 40px;
+  border-radius: 3px;
+  margin-bottom: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tint-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tint-name {
+  color: white;
+  font-size: 12px;
+}
+
+.tint-price {
+  color: #5cb85c;
+  font-size: 12px;
+}
+
+/* Style pour les xenons */
+.xenon-colors-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.xenon-color {
+  position: relative;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.xenon-color:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.xenon-color.active, .xenon-color.selected {
+  border-color: #2874a6;
+  box-shadow: 0 0 8px rgba(40, 116, 166, 0.6);
+}
+
+.xenon-color span {
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.8);
+  font-weight: bold;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Aperçu de couleur pour les couleurs personnalisées */
+.color-preview {
+  width: 100%;
+  height: 50px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.neon-preview {
+  width: 100%;
+  height: 50px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+  background-color: rgb(255, 0, 255);
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Styles pour les sliders RGB de néon */
+.neon-custom-colors {
+  display: flex;
+  flex-direction: column;
+}
+
+.rgb-sliders {
+  margin-bottom: 15px;
+}
+
+/* Auto-application des couleurs (suppression de boutons 'Appliquer') */
+.auto-apply .apply-color-btn {
+  display: none;
+}
+
+/* Animation de changement de couleur en direct */
+.live-preview {
+  transition: background-color 0.3s ease;
+}
+
+/* Animation subtile pour les changements de couleur */
+@keyframes color-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.color-changed {
+  animation: color-pulse 0.3s ease;
+}
+
+/* Styles pour les onglets de couleur */
+.color-tabs {
+  display: flex;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 15px;
+}
+
+.color-tab {
+  flex: 1;
+  text-align: center;
+  padding: 12px 0;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 14px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.color-tab:last-child {
+  border-right: none;
+}
+
+.color-tab:hover {
+  background-color: rgba(40, 116, 166, 0.5);
+}
+
+.color-tab.active {
+  background-color: rgba(40, 116, 166, 0.8);
+  font-weight: bold;
+}
+
+/* Style pour le color-preview */
+.color-preview {
+  width: 100%;
+  height: 60px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.color-preview:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.5), 0 0 10px rgba(40, 116, 166, 0.5);
+  transform: scale(1.02);
+}
+
+.color-preview:active {
+  transform: scale(0.98);
+}
+
+/* Style pour les sliders RGB */
+.rgb-sliders {
+  margin-bottom: 15px;
+}
+
+.rgb-slider {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.rgb-slider span {
+  color: #ffffff;
+  width: 20px;
+  text-align: center;
+  margin-right: 8px;
+}
+
+.rgb-slider span:last-child {
+  width: 30px;
+  text-align: right;
+}
+
+.rgb-slider input[type="range"] {
+  flex: 1;
+  height: 6px;
+  -webkit-appearance: none;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 3px;
+  margin-right: 8px;
+}
+
+.rgb-slider:nth-child(1) input[type="range"] {
+  background: linear-gradient(to right, #000000, #FF0000);
+}
+
+.rgb-slider:nth-child(2) input[type="range"] {
+  background: linear-gradient(to right, #000000, #00FF00);
+}
+
+.rgb-slider:nth-child(3) input[type="range"] {
+  background: linear-gradient(to right, #000000, #0000FF);
+}
+
+.rgb-slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+/* Style pour les champs de valeur */
+.color-picker-values {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.color-input {
+  flex-basis: 48%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.color-input span {
+  color: #ffffff;
+  width: 30px;
+  text-align: left;
+  margin-right: 8px;
+}
+
+.color-input input {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 3px;
+  padding: 6px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.color-input input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.color-input input[type="number"]::-webkit-inner-spin-button, 
+.color-input input[type="number"]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Style pour le slider de teinte */
+.gradient-slider {
+  margin-bottom: 15px;
+}
+
+.gradient-slider input[type="range"] {
+  width: 100%;
+  height: 10px;
+  -webkit-appearance: none;
+  background: linear-gradient(to right, 
+    #FF0000, #FFFF00, #00FF00, #00FFFF, #0000FF, #FF00FF, #FF0000);
+  border-radius: 5px;
+  outline: none;
+}
+
+.gradient-slider input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Style pour le bouton d'application */
+.apply-color-btn {
+  width: 100%;
+  background-color: #2874a6;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.apply-color-btn:hover {
+  background-color: #3498db;
+}
+
+.apply-color-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.3s ease;
+}
+
+.apply-color-btn:hover::after {
+  left: 100%;
+}
+
+/* Animation pour le changement de couleur */
+@keyframes color-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); box-shadow: 0 0 15px rgba(40, 116, 166, 0.7); }
+  100% { transform: scale(1); }
+}
+
+.color-changed {
+  animation: color-pulse 0.3s ease;
+}
+
+/* Styles pour la grille de couleurs */
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.color-item {
+  width: 100%;
+  padding-bottom: 100%;
+  position: relative;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.color-item:hover {
+  transform: scale(1.1);
+  z-index: 10;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.color-item.active, .color-item.selected {
+  border-color: #ffffff;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="ui.css" />
+    </head>
+    <body>
+        <div class="custom" id="customMenu" style="display: none;">
+            <div class="div">
+                <!-- Menu de navigation principal -->
+                <div class="liste">
+                    <div class="anul-btn" id="cancel-btn"><img class="img" src="png/annuler.png" alt="Logo"/><div class="text-wrapper-15">Annuler</div></div>
+                    <div class="valid-btn" id="confirm-btn"><img class="img" src="png/valider.png" alt="Logo"/><div class="text-wrapper-16">Valider</div></div>
+                    <div class="prix"><div class="text-wrapper-17" id="price">$0</div></div>
+                    <div class="portes" id="portes-btn">
+                        <i class="fas fa-door-open"></i>
+                        <div class="text-wrapper-p">Portes</div>
+                    </div>
+                    <div class="extra-btn" id="extra-btn">
+                        <i class="fas fa-plus"></i>
+                        <div class="text-wrapper-18">Extra</div>
+                    </div>
+                    <div class="roues-btn" id="roues-btn">
+                      <i class="fas fa-dharmachakra"></i>
+                      <div class="text-wrapper-19">Roues</div>
+                    </div>
+                    <div class="color-btn" id="color-btn">
+                        <i class="fas fa-palette"></i>
+                        <div class="text-wrapper-20">Couleurs</div>
+                    </div>
+                    <div class="ext-btn" id="ext-btn">
+                        <i class="fas fa-car"></i>
+                        <div class="text-wrapper-21">Extérieur</div>
+                    </div>
+                    <div class="int-btn" id="int-btn">
+                      <i class="fas fa-car-side"></i>
+                      <div class="text-wrapper-22">Intérieur</div>
+                    </div>
+                    <div class="perf-btn active" id="perf-btn">
+                        <i class="fas fa-gauge-high"></i>
+                        <div class="text-wrapper-23">Performances</div>
+                    </div>
+                </div>
+                <div class="logo"><img class="img" src="png/fshop.png" alt="Logo"/></div>
+
+                <!-- Conteneurs des menus (vidés car tout sera généré en JS) -->
+                <div class="modif" id="performance-container"></div>
+                <div class="modif" id="exterior-container" style="display: none;"></div>
+                <div class="modif" id="interior-container" style="display: none;"></div>
+                <div class="modif" id="color-container" style="display: none;"></div>
+                <div class="modif" id="wheels-container" style="display: none;"></div>
+                <div class="modif" id="extras-container" style="display: none;"></div>
+                <div class="modif" id="doors-container" style="display: none;"></div>
+            </div>
+        </div>
+
+        <!-- Contrôles de rotation -->
+        <div class="rotation-controls" id="rotation-controls" style="display: none;">
+            <div class="rotation-btn left" id="rotate-left"><i class="fas fa-arrow-left"></i></div>
+            <div class="rotation-btn right" id="rotate-right"><i class="fas fa-arrow-right"></i></div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="ui.js"></script>
+    </body>
+</html>
